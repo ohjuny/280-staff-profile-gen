@@ -47,4 +47,5 @@ Example Output:
 Indentation on output is set by default for easy copy-pasting into eecs280 codebase, but can be configured by DEFAULT_NUM_SPACES global variable.
 
 Notes:
+- Profile picture is referenced as "uniqname.jpg". Must manually move images over (with correct name) into assets folder.
 - There are some ambiguous cases such as OS being inputted as "macOS+Linux", IDE being inputted as "VS Code, CLion (not profficient)", emoji name being inputted as "emoji1, emoji2" (2 emojis for 1 description), etc. In these cases, the program will insert the string TODO for easy ctrl+f searching.
