@@ -32,7 +32,7 @@ import sys
         #   </div>
         # </div><!-- /fluid card -->
 
-INPUT_FILENAME = 'responses.csv'
+INPUT_FILENAME = ''
 OUTPUT_FILENAME = ''
 DEFAULT_NUM_SPACES = 8
 
@@ -175,7 +175,8 @@ def code_emoji(emoji, num_spaces=0):
 
 
 if __name__ == "__main__":
-    OUTPUT_FILENAME = sys.argv[1]
+    INPUT_FILENAME = sys.argv[1]
+    OUTPUT_FILENAME = sys.argv[2]
 
     people = populate_people()
 
