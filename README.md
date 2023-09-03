@@ -29,16 +29,17 @@ Example Output:
             </div>
             <div class="description">
               <a class="email" href="mailto:ohjun@umich.edu" target="_blank" data-tooltip="ohjun@umich.edu"><i class="icon envelope"></i></a>
-              <span data-tooltip="MacOS"><i class="icon apple"></i></span>
+              <span data-tooltip="macOS"><i class="icon apple"></i></span>
               <span data-tooltip="VS Code"><i class="icon-vscode"></i></span>
               <span data-tooltip="Hometown: Dubai, UAE"><i class="icon map pin"></i></span>
             </div>
           </div>
           <div class="emoji content">
-            <span data-tooltip="I grew up in Dubai"><em data-emoji="dromedary_camel"></em></span>
             <span data-tooltip="I can play the bell tower"><em data-emoji="bell"></em></span>
-            <span data-tooltip="I skydived (skydove?) for the first time last year"><em data-emoji="parachute"></em></span>
-            <span data-tooltip="Tell me about your favorite book!"><em data-emoji="books"></em></span>
+            <span data-tooltip="My blood is 83% coffee"><em data-emoji="coffee"></em></span>
+            <span data-tooltip="Greatest invention by humans"><em data-emoji="sushi"></em></span>
+            <span data-tooltip="Worst invention by humans"><em data-emoji="alarm_clock"></em></span>
+            <span data-tooltip="Advice: learn how to play euchre..."><em data-emoji="spades"></em></span>
           </div>
         </div><!-- /fluid card -->
 ```
