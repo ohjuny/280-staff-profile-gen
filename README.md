@@ -6,7 +6,7 @@ Usage:
 python3 eecs280profile.py [INPUT_FILENAME.csv] [OUTPUT_FILENAME]
 ```
 
-Input (csv):
+Example Input (csv):
 ```
 Timestamp,Email Address,uniqname,Preferred Name (First and Last),Preferred Pronouns,Preferred OS,Preferred IDE,"(optional) Hometown (format: Ann Arbor, MI or Seoul, South Korea)","Profile Picture (jpg, 360x360, uniqname.jpg)",Emoji 1 Name,Emoji 1 Description,Emoji 2 Name,Emoji 2 Description,Emoji 3 Name,Emoji 3 Description,Emoji 4 Name,Emoji 4 Description,Emoji 5 Name,Emoji 5 Description
 8/31/2023 19:08:16,ohjun@umich.edu,ohjun,Oh Jun Kweon,he/him,macOS,VS Code,"Dubai, UAE",https://drive.google.com/open?id=1DPf4u1xDKd5J7lTXwrytQLbeu0jZNKqg,bell,I can play the bell tower,coffee,My blood is 83% coffee,sushi,Greatest invention by humans,alarm_clock,Worst invention by humans,spades,Advice: learn how to play euchre...
@@ -14,7 +14,7 @@ Timestamp,Email Address,uniqname,Preferred Name (First and Last),Preferred Prono
 The input file can be generated using Google Forms. The code generation does not depend on the field names, but does depend on the field ordering.
 The code generation also assumes that 3 emojis (name+description) are always avilable, with emoji 4 and 5 being optional.
 
-Output:
+Example Output:
 ```html
         <div class="ui card">
           <div class="image">
