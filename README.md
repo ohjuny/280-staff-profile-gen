@@ -9,6 +9,8 @@ Usage:
 python3 html_to_json.py [INPUT_FILENAME.csv] [OUTPUT_FILENAME]
 ```
 
+Note: the email line for faculty cards is slightly different, so may not work for faculty cards.
+
 ## csv_to_html.py
 Converts raw csv to HTML card.
 
