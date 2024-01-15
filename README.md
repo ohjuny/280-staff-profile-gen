@@ -2,7 +2,7 @@
 Tools for converting between csv, html, json for staff profile cards on [eecs280.org](https://www.eecs280.org).
 
 ## html_to_json.py
-Converts HTML card to json.
+Converts HTML card to raw json.
 
 Usage:
 ```terminal
@@ -10,7 +10,7 @@ python3 html_to_json.py [INPUT_FILENAME.csv] [OUTPUT_FILENAME]
 ```
 
 ## csv_to_html.py
-Generates HTML for eecs280.org based on form data in csv format.
+Converts raw csv to HTML card.
 
 Usage:
 ```terminal
