@@ -53,8 +53,8 @@ class Person:
             "uniqname": self.uniqname,
             "name": self.name,
             "pronoun": self.pronoun,
-            "oss": [ {"readable": "macOS", "icon": "apple",} ],
-            "ides": [ {"readable": "VS Code", "icon": "vscode",} ],
+            "oss": [ {"readable": "macOS", "icon": "apple",} ], # TODO: fix hardcoded
+            "ides": [ {"readable": "VS Code", "icon": "vscode",} ], # TODO: fix hardcoded
             "hometown": self.hometown,
             "emojis": self.emojis,
         }
