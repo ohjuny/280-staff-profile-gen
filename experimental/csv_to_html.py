@@ -77,13 +77,13 @@ def populate_people(inp_filename):
             people.append(person)
     return people
 
-# TODO: allow commandline option for faculty template
 def main():
     if len(sys.argv) != 3:
         print('Usage: python csv_to_html.py [INPUT_FILENAME] [OUTPUT_FILENAME]')
         exit()
     inp_filename = sys.argv[1]
     out_filename = sys.argv[2]
+    TEMPLATE = 'student'  # Change to 'faculty' for faculty template
 
     people = populate_people(inp_filename)
 
@@ -92,7 +92,7 @@ def main():
     root = os.path.dirname(os.path.abspath(__file__))
     templates_dir = os.path.join(root, 'templates')
     env = Environment( loader = FileSystemLoader(templates_dir) )
-    template = env.get_template('student.html')
+    template = env.get_template(f'{TEMPLATE}.html')
     with open(out_filename, 'w') as out_file:
         for person in people:
             out_file.write(template.render(person.get_dict()))
