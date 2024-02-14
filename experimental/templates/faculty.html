@@ -1,0 +1,31 @@
+<div class="ui card">
+    <div class="image">
+        <img src="assets/headshots/{{ uniqname }}.jpg" alt="{{ name }} head shot" />
+    </div>
+    <div class="content">
+        <div class="header">
+            {{ name }}
+        </div>
+        <div class="meta">
+            {{ pronoun | default("&nbsp;") }}
+        </div>
+        <div class="description">
+            <p><span class="ui small text"><i class="icon envelope"></i>{{ uniqname }}@umich.edu</span></p>
+            {%- for os in oss %}
+            <span data-tooltip="{{ os.readable }}"><i class="icon {{ os.icon }}"></i></span>
+            {%- endfor %}
+            {%- for ide in ides %}
+            <span data-tooltip="{{ ide.readable }}"><i class="icon-{{ ide.icon }}"></i></span>
+            {%- endfor %}
+            {%- if hometown %}
+            <span data-tooltip="Hometown: {{ hometown }}"><i class="icon map pin"></i></span>
+            {%- endif %}
+        </div>
+    </div>
+    <div class="emoji content">
+        {%- for emoji in emojis %}
+        <span data-tooltip="{{ emoji.desc }}"><em data-emoji="{{ emoji.name }}"></em></span>
+        {%- endfor %}
+    </div>
+</div>
+

@@ -1,11 +1,13 @@
-from jinja2 import Environment, FileSystemLoader
-import os
-import csv
-import sys
+# Usage: python csv_to_html.py [INPUT_FILENAME] [OUTPUT_FILENAME]
 
 # Example input:
 # Timestamp,Email Address,uniqname,Preferred Name (First and Last),Preferred Pronouns,Preferred OS,Preferred IDE,"(optional) Hometown (format: Ann Arbor, MI or Seoul, South Korea)","Profile Picture (jpg, 360x360, uniqname.jpg)",Emoji 1 Name,Emoji 1 Description,Emoji 2 Name,Emoji 2 Description,Emoji 3 Name,Emoji 3 Description,Emoji 4 Name,Emoji 4 Description,Emoji 5 Name,Emoji 5 Description
 # 8/31/2023 19:08:16,ohjun@umich.edu,ohjun,Oh Jun Kweon,he/him,macOS,VS Code,"Dubai, UAE",https://drive.google.com/open?id=1DPf4u1xDKd5J7lTXwrytQLbeu0jZNKqg,bell,I can play the bell tower,coffee,My blood is 83% coffee,sushi,Greatest invention by humans,alarm_clock,Worst invention by humans,spades,Advice: learn how to play euchre...
+
+from jinja2 import Environment, FileSystemLoader
+import os
+import csv
+import sys
 
 
 class Icon:
@@ -59,20 +61,22 @@ class Person:
             "emojis": self.emojis,
         }
 
+# Expected columns in input csv:
+#    0     ,      1      ,   2    ,        3                      ,       4          ,      5     ,      6      ,                7                                                  ,         8                                    ,     9      ,      10           ,     11     ,     12            ,    13      ,      14           ,    15      ,      16           ,    17      ,           18
+# Timestamp,Email Address,uniqname,Preferred Name (First and Last),Preferred Pronouns,Preferred OS,Preferred IDE,"(optional) Hometown (format: Ann Arbor, MI or Seoul, South Korea)","Profile Picture (jpg, 360x360, uniqname.jpg)",Emoji 1 Name,Emoji 1 Description,Emoji 2 Name,Emoji 2 Description,Emoji 3 Name,Emoji 3 Description,Emoji 4 Name,Emoji 4 Description,Emoji 5 Name,Emoji 5 Description
 def populate_people(inp_filename):
     people = []
     with open(inp_filename) as csv_file:
-        next(csv_file)  # Consume header
-        csv_reader = csv.reader(csv_file, delimiter=',')
+        csv_reader = csv.DictReader(csv_file)
         for row in csv_reader:
-            person = Person(row[2], row[3], row[4], row[5], row[6], row[7])
-            person.add_emoji(row[9], row[10])  # Emoji 1
-            person.add_emoji(row[11], row[12]) # Emoji 2
-            person.add_emoji(row[13], row[14]) # Emoji 3
-            if row[15]: # Emoji 4
-                person.add_emoji(row[15], row[16])
-            if row[17]: # Emoji 5
-                person.add_emoji(row[17], row[18])
+            person = Person(row['uniqname'], row['Preferred Name (First and Last)'], row['Preferred Pronouns'], row['Preferred OS'], row["Preferred IDE"], row["(optional) Hometown (format: Ann Arbor, MI or Seoul, South Korea)"])
+            person.add_emoji(row['Emoji 1 Name'], row['Emoji 1 Description'])  # Emoji 1
+            person.add_emoji(row['Emoji 2 Name'], row['Emoji 2 Description'])  # Emoji 1
+            person.add_emoji(row['Emoji 3 Name'], row['Emoji 3 Description'])  # Emoji 1
+            if row['Emoji 4 Name']: # Emoji 4
+                person.add_emoji(row['Emoji 4 Name'], row['Emoji 4 Description'])
+            if row['Emoji 5 Name']: # Emoji 5
+                person.add_emoji(row['Emoji 5 Name'], row['Emoji 5 Description'])
 
             people.append(person)
     return people
